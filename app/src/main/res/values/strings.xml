@@ -3,4 +3,7 @@
     <string name="submit">Submit</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
+    <string name="logout">Logout</string>
+    <string name="take_picture">take_picture</string>
+    <string name="description">Description</string>
 </resources>
