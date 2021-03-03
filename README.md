@@ -31,10 +31,6 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [Gif Maker](https://play.google.com/store/apps/details?id=com.media.zatashima.studio&hl=en_US&gl=US).
 
-## Notes
-
-Describe any challenges encountered while building the app.
-
 ## Open-source libraries used
 
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
@@ -42,7 +38,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [2021] [Thomas DeVries]
+    Copyright 2021 Thomas DeVries
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
