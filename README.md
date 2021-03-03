@@ -29,7 +29,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src="https://github.com/Naseus/Parsetagram/blob/master/Walkthrough.gif" width=250><br>
 
-Made with [Peek](https://github.com/phw/peek).
+GIF created with [Gif Maker](https://play.google.com/store/apps/details?id=com.media.zatashima.studio&hl=en_US&gl=US).
 
 ## Notes
 
