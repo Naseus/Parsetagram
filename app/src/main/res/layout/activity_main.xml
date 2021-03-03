@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imgPost"
+        android:id="@+id/ivPost"
         android:layout_width="match_parent"
         android:layout_height="327dp"
         tools:srcCompat="@tools:sample/avatars" />
@@ -16,7 +16,7 @@
         android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgPost"
+        android:layout_below="@+id/ivPost"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="0dp"
         android:hint="@string/description"
