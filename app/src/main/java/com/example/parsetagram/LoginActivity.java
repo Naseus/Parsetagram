@@ -14,6 +14,7 @@ import android.widget.EditText;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -21,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private Button btnSubmit;
+    private Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnSubmit = findViewById(R.id.btnSubmit);
+        btnRegister = findViewById(R.id.btnRegister);
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +44,26 @@ public class LoginActivity extends AppCompatActivity {
                 String user = etUsername.getText().toString();
                 String pass = etPassword.getText().toString();
                 loginUser(user, pass);
+            }
+        });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username = etUsername.getText().toString();
+                String pass = etPassword.getText().toString();
+                ParseUser user = new ParseUser();
+                user.setUsername(username);
+                user.setPassword(pass);
+                user.signUpInBackground(new SignUpCallback() {
+                    public void done(ParseException e) {
+                        if (e == null) {
+                            loginUser(username, pass);
+                        } else {
+                            // Sign up didn't succeed. Look at the ParseException
+                            // to figure out what went wrong
+                        }
+                    }
+                });
             }
         });
     }
