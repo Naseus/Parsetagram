@@ -30,7 +30,7 @@ public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
     private RecyclerView rvPosts;
-    private PostsAdapter adapter;
+    protected PostsAdapter adapter;
     List<Post> allPosts;
 
     public HomeFragment() {
@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
         queryPosts();
     }
 
-    private void queryPosts() {
+    protected void queryPosts() {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
         query.setLimit(20);
