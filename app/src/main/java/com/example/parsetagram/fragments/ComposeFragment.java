@@ -110,7 +110,7 @@ public class ComposeFragment extends Fragment {
                     Log.i(TAG, "Post saved successfully");
                     Toast.makeText(getContext(), "Post saved successfully", Toast.LENGTH_LONG).show();
                     etDescription.setText("");
-                    ivPost.setImageResource(-1);
+                    ivPost.setImageResource(0);
                 }
             }
         });
