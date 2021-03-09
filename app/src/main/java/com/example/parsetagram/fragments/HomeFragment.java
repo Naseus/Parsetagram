@@ -1,5 +1,6 @@
 package com.example.parsetagram.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -7,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -31,7 +33,8 @@ public class HomeFragment extends Fragment {
     private static final String TAG = "HomeFragment";
     private RecyclerView rvPosts;
     protected PostsAdapter adapter;
-    List<Post> allPosts;
+    protected List <Post> allPosts;
+    private SwipeRefreshLayout swipeContainer;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -50,14 +53,28 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         allPosts = new ArrayList<>();
+        swipeContainer = view.findViewById(R.id.swipeContainer);
         adapter = new PostsAdapter(getContext(), allPosts);
         rvPosts = view.findViewById(R.id.rvPosts);
         rvPosts.setAdapter(adapter);
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
         queryPosts();
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                queryPosts();
+                swipeContainer.setRefreshing(false);
+            }
+        });
     }
 
     protected void queryPosts() {
