@@ -7,6 +7,7 @@ import com.parse.ParseUser;
 
 @ParseClassName("Post")
 public class Post extends ParseObject {
+    public static final String KEY_CREATED_KEY = "createdAt";
     public static String KEY_DESCRIPTION = "description";
     public static String KEY_IMAGE = "image";
     public static String KEY_USER = "user";

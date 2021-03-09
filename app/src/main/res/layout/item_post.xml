@@ -31,4 +31,12 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/gray_text"
+        android:textSize="8sp" />
 </LinearLayout>
